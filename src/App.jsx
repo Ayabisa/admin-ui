@@ -34,7 +34,7 @@ function App() {
           >
             {/* Image */}
             <img
-              src="https://www.placehold.co/200x400"
+              src="https://www.placehold.co/300x200"
               alt={course.title}
               className="w-full h-44 object-cover"
             />
