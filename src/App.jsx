@@ -14,7 +14,7 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} 
-          className="w-24 h-24" 
+          className="w-24 h-24 animate-spin"
           alt="React logo"
           style={{animationDuration: "10s"}}
           />
