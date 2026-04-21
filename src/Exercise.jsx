@@ -1,7 +1,31 @@
 import React from "react";
 import UserCard from "./UserCard";
 
-function Exercise() {
+function Exercise(){
+  const users = [
+    {
+    name: "lena",
+    email: "lena@gmail.com",
+    street: "jl.Nakula",
+    city: "Semarang",
+    age: 20,
+    },
+    {
+    name: "mahda",
+    email: "mahda@gmail.com",
+    street: "jl.Tubanan",
+    city: "Jepara",
+    age: 20,
+    },
+     {
+    name: "jake",
+    email: "jake@gmail.com",
+    street: "Brisbane",
+    city: "Brisbane, Australia",
+    age: 20,
+    },
+  ];
+
   return (
     <>
     <div className="min-h-screen bg-gray-100 p-6">
@@ -9,21 +33,9 @@ function Exercise() {
           User Cards
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <UserCard 
-            name="Mahda"
-            email="lena@gmail.com"
-            city="Semarang"
-          />
-          <UserCard 
-            name="Lena"
-            email="mahda@gmail.com"
-            city="Jepara"
-          />
-          <UserCard 
-            name="Jake"
-            email="jake@gmail.com"
-            city="Brisbane"
-          />
+          <UserCard {...users[0]}/>
+          <UserCard {...users[1]}/>
+          <UserCard {...users[2]}/>
         </div>
       </div>
     </>
