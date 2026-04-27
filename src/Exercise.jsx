@@ -1,30 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UserCard from "./UserCard";
+import { getUsers } from "./Services";
 
 function Exercise(){
-  const users = [
-    {
-    name: "lena",
-    email: "lena@gmail.com",
-    street: "jl.Nakula",
-    city: "Semarang",
-    age: 20,
-    },
-    {
-    name: "mahda",
-    email: "mahda@gmail.com",
-    street: "jl.Tubanan",
-    city: "Jepara",
-    age: 20,
-    },
-     {
-    name: "jake",
-    email: "jake@gmail.com",
-    street: "Brisbane",
-    city: "Brisbane, Australia",
-    age: 20,
-    },
-  ];
+const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getUsers();
+        setUsers(data);
+      } catch (error) {
+        console.error("[Component] Gagal menampilkan data:", error.message);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -33,9 +24,9 @@ function Exercise(){
           User Cards
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <UserCard {...users[0]}/>
-          <UserCard {...users[1]}/>
-          <UserCard {...users[2]}/>
+                    {users.map((user, index) => (
+            <UserCard key={index} {...user} />
+          ))}
         </div>
       </div>
     </>
