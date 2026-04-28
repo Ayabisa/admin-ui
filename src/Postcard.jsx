@@ -1,19 +1,16 @@
 import React, {useState} from "react";
 
-function UserCard(props){
-    const {name, email, street, city, ...rest} = props;
+function Postcard(props){
+    const {title, body, ...rest} = props;
     const [clicked, setClicked] = useState(false);
 
     console.log(Object.entries(rest));
 
     return (
-        <div className="bg-white p-10 rounded-lg shadow hover:shadow-md transition-shadow">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">{name}</h2>
+        <div className="bg-white p-4 rounded-lg shadow hover:shadow-md hover:scale-105 hover:border hover:border-red-300 hover:bg-red-100 transition-all duration-300">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
         <p className="text-gray-600">
-            <span className="font-medium">Email:</span> {email}
-        </p>
-        <p className="text-gray-600">
-            <span className="font-medium">Address:</span> {street}, {city}
+            <span className="font-medium">body: </span> {body}
         </p>
 
         {/* Menampilkan data tambahan dari rest */}
@@ -24,7 +21,7 @@ function UserCard(props){
         ))}
 
         <button 
-        className={`${clicked ? "bg-special-red2" : "bg-gray-01"} text-white p-2 rounded-md`}
+        className={`${clicked ? "bg-special-red2" : "bg-gray-01"} text-white p-2 rounded-md block mx-auto`}
         onClick={() => setClicked(true)}
         > 
             {clicked ? "Tombol sudah diklik" : "Silakan Klik"}
@@ -33,4 +30,4 @@ function UserCard(props){
     );
 }
 
-export default UserCard
+export default Postcard
