@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import LabeledInput from '../Elements/LabeledInput';
 import CheckBox from '../Elements/CheckBox';
 import Button from '../Elements/Button';
@@ -94,9 +95,9 @@ function FormSignUp() {
             <span className="text-sm text-gray-500">
                 Already have an account? 
             </span>
-            <a className="text-primary font-semibold text-sm">
-                Sign in here
-            </a>
+          <Link to="/login" className="text-primary font-semibold text-sm">
+            Sign in here
+          </Link>
         </div>
     </>
   );
