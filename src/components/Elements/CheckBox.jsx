@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function CheckBox(props) {
   const {label, id, ...rest } = props;
