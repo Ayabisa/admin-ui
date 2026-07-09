@@ -6,6 +6,7 @@ import Icon from "../Elements/Icon";
 
 function CardBalance(props) {
   const { data } = props;
+  console.log('🔴 CardBalance menerima data:', props.data);
 
   return (
     <Card
