@@ -5,7 +5,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Icon from "../Elements/Icon";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../context/themeContext";
-
+import { AuthContext } from "./authContext";
 
 function MainLayout(props) {
   const { children } = props;
@@ -34,6 +34,9 @@ const menu = [
     { id: 6, name: "Goals", icon: <Icon.Goal />, link: "/goal" },
     { id: 7, name: "Settings", icon: <Icon.Setting />, link: "/setting" },
   ];
+
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   return (
     <>
@@ -104,8 +107,7 @@ const menu = [
         <div>Avatar</div>
 
         <div className="hidden sm:block">
-          Username
-          <br />
+          <div>{user.name}</div>
           View Profile
         </div>
 
@@ -119,7 +121,7 @@ const menu = [
 			<div className="bg-special-mainBg flex-1 flex flex-col">
         <header className="border border-b border-gray-05 px-6 py-7 flex justify-between items-center">
           <div className="flex items-center">
-            <div className="font-bold text-2xl me-6">Username</div> 
+            <div className="font-bold text-2xl me-6">{user.name}</div> 
               <div className="text-gray-03 flex">
                 <Icon.ChevronRight size={20} />
                 <span>May 19, 2023</span>

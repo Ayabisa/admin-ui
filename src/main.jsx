@@ -5,11 +5,15 @@ import "./index.css";
 //import Parent from "./latihan/Parent.jsx";
 import Form from "./latihan/Form.jsx";
 import { ThemeContextProvider } from "./context/themeContext.jsx";
+import { AuthContextProvider } from "./components/Layout/authContext.jsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeContextProvider>
-      <App />
-    </ThemeContextProvider>
+    <AuthContextProvider>
+      <ThemeContextProvider>
+        <App />
+      </ThemeContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>,
 );

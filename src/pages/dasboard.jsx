@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext,  useEffect, useState } from 'react';
 import MainLayout from '../components/Layout/MainLayout'
 import Card from '../components/Elements/Card';
 import CardBalance from '../components/Fragment/CardBalance';
@@ -15,9 +15,10 @@ import {
   goals,
   expensesStatistics,
  } from '../data';
+import { goalService } from '../services/dataService';
+import { AuthContext } from '../components/Layout/authContext';
 
 function dasboard() {
-  console.log(transactions);
 
   return (
     <>
